@@ -1,0 +1,602 @@
+*{
+    box-sizing: border-box;
+    font-family: uber;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+@font-face {
+    font-family: uber;
+    src: url(fonts/uber.otf);
+}
+
+body{
+    display: flex;
+    background-color: #141111;
+    min-height: 100vh;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0;
+    min-height: 100vh;
+    padding-top: 50px;
+}
+
+.navbar{
+    top: 0;
+    display: flex;
+    position: fixed;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #334;
+    color: white;
+    z-index: 10000;
+}
+
+/* .mylogo{
+    font-size: 1.5rem;
+    margin: 0.5rem;
+} */
+
+.mgx{
+    height: 3em;
+    float: left;
+    padding: 0;
+    margin: 0;
+}
+
+.navlinks ul{
+    margin: 0;
+    padding: 0;
+    display: flex;
+
+}
+
+.navlinks li {
+    list-style: none;
+
+}
+
+.navlinks li a{
+    text-decoration: none;
+    color: antiquewhite;
+    margin: 1rem;
+    display: block;
+}
+
+.navlinks li:hover{
+    background-color: #555;
+}
+
+.toggle-button{
+    position: absolute;
+    top: 0.75rem;
+    right: 1rem;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+
+}
+
+.toggle-button span{
+    height: 3px;
+    width: 100%;
+    background-color: white;
+    border-radius: 10px;
+}
+
+
+
+.hero{
+    /* display: block; */
+    flex-grow: 1;
+    padding: 20px;
+
+}
+
+/* Body Section */
+
+.hello{
+    display: flex;
+    font-size: 5rem;
+    text-align:justify;
+    justify-content: center;
+    color: beige;
+    opacity: 1;
+    transform: translateY(30px);
+    animation: slide 2s linear forwards;
+    
+}
+
+.content {
+    color: beige;
+   
+    
+}
+
+p{
+    /* text-align: left; */
+    padding-top: 1.5em;
+    font-size: 1.8em;
+    opacity: 0;
+    transform: translateY(40px);
+    animation: image 3s linear forwards;
+    
+}
+
+.about:hover{
+    cursor: pointer;
+    background-color: #334;
+    border-radius: 2px;
+    /* scale: 1.1px; */
+    transition-duration: 0.2s;
+}
+
+.content h1{
+    padding-top: 2rem;
+    color: beige;
+    font-size: 3em;
+}
+
+
+
+.badge{
+    height: 30em;
+    float: right;
+    padding: 0;
+    margin: 0;
+    opacity: 0;
+    transform: translateY(40px);
+    animation: image 8s linear forwards;
+
+}
+
+.badge:hover{
+    cursor: pointer;
+    scale: 1.02;
+    transition-duration: 0.5s;
+    
+}
+
+.main{
+    flex-grow: 1;
+    padding: 20px;
+    background-color: rgba(51, 51, 68, 0.368);
+    margin: 0.5em;
+    border-radius: 10px;
+    /* position: relative; */
+}
+
+.brief{
+    display: flex;
+    font-size: 5rem;
+    justify-content: center;
+    color: beige;
+    text-align: center;
+}
+
+.content2{
+    color: beige;
+    opacity: 0;
+    transform: translateY(40px);
+    animation: image 3s linear forwards;
+    /* font-size: ; */
+}
+
+.gallery{
+    color: rgb(165, 165, 112);
+}
+
+.website{
+    color: rgb(165, 165, 112);
+    margin-top: 0.85em;
+}
+
+.work{
+    padding-top: 1em;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1em;
+    justify-content: space-evenly;
+}
+
+.card{
+    height: 20rem;
+    width: 20rem;
+    border-radius: 3px;
+    
+}
+
+.card:hover{
+    cursor: pointer;
+    scale: 1.05;
+    transition-duration: 0.5s all;
+}
+
+.skill-level{
+    display: flex;
+    justify-content: center;
+    color: rgb(165, 165, 112);
+    margin-top: 0.85em;
+
+}
+
+.skills{
+    width: 100%;
+    max-width: 600px;
+    /* padding: 0 20px; */
+    padding-top: 1em;
+    padding-bottom: 2em;
+    
+}
+
+
+.skill-name{
+    color: beige;
+    font-size: 18px;
+    font-weight: 600;
+    margin: 10px;
+}
+
+.skill-bar{
+    height: 14px;
+    background-color: beige;
+    border-radius: 3px;
+}
+
+.skill-per{
+    height: 14px;
+    background-color: rgb(92, 180, 235);
+    border-radius: 3px;
+    position: relative;
+    animation: fillBar 5s 1 ;
+}
+
+.skill-per::before{
+    content: attr(per);
+    position: absolute;
+    padding: 4px 6px;
+    background-color: beige;
+    border-radius: 4px;
+    font-size: 10px;
+    top: -35px;
+    right: 0;
+    transform: translateX(50%);
+}
+
+.skill-per::after{
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: beige;
+    top: -20px;
+    right: 0;
+    transform: translateX(50%) rotate(45deg);
+    z-index: -1;
+}
+
+.measht{
+    height: 24em;
+    width: 24em;
+    float: right;
+    padding-top: 0;
+    border: goldenrod solid ;
+    border-radius: 20em;
+    background-color: rgb(34, 34, 46);
+    opacity: 0;
+    transform: translateY(40px);
+    animation: image 5s linear forwards;
+    /* position: absolute; */
+    /* margin-bottom: 20em; */
+
+}
+
+@keyframes image {
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fillBar {
+    from{
+        width: 0;
+    }
+
+    to{
+        width: 100%;
+    }
+}
+
+/* FOOTER */
+
+.footer{
+    display: flex;
+    text-align: center;
+    padding: 10px;
+    color: white;
+}
+
+
+.socials ul{
+    margin: 0;
+    padding: 0;
+    display: flex;
+
+
+}
+
+.socials ul li{
+    list-style: none;
+
+
+}
+
+.socials ul li a{
+    text-decoration: none;
+    color: antiquewhite;
+    margin: 1rem;
+    display: block;
+}
+
+.socials ul li a img{
+    height: 2rem;
+    width: 100%;
+}
+
+.socials ul li :hover{
+    cursor: pointer;
+    scale: 1.03;
+    transition-duration: 0.5s;
+}
+
+.mgs{
+    height: 4em;
+    float: right;
+    padding: 0;
+    margin: 0;
+}
+
+.mgs:hover{
+    cursor: pointer;
+}
+
+.sign-up{
+    display: flex;
+    /* flex-grow: 1; */
+    padding: 4em;
+    background-color: rgba(51, 51, 68, 0.204);
+    margin: 2.9em;
+    border-radius: 10px;
+    justify-content: center;
+}
+
+form{
+    color: beige;
+}
+
+.sign-up form{
+    display: block;
+    
+}
+
+input{
+    all: unset;
+    border: #331 solid 2px;
+    border-radius: 4px;
+}
+
+input:hover{
+    scale: 1.02;
+    transition-duration: 0.5s;
+}
+
+input[type='text']{
+    padding: 1em;
+}
+
+input[type='email']{
+    padding: 0.5em;
+    width: 100%;
+}
+
+.key input[type='password']{
+    all: unset;
+    width: 100%;
+    padding: 0.5em;
+}
+
+.key img{
+    width: 30px;
+    cursor: pointer;
+}
+
+.key{
+    display: flex;
+    align-items: center;
+    padding: 0.5em;
+    width: 100%;
+    border: #331 solid 2px;
+    border-radius: 4px;
+}
+
+input[type='submit']{
+    padding: 0.2em;
+}
+
+input[type='submit']:hover{
+    cursor: pointer;
+
+}
+
+/* input[type='checkbox']{
+    height: 0.8em;
+    width:  0.8em;
+    margin-top: 0.5em;
+    cursor: pointer;
+
+}
+
+input[type='checkbox']:checked{
+    background-color: goldenrod;
+}
+
+input[type='checkbox']::before{
+    position: absolute;
+    content:'/2713';
+    line-height: 15px;
+    transform: scale(0);
+    transition: 0.3s all ease-in-out;
+}
+
+input[type='checkbox']:checked::after{
+    transform: scale(1);
+} */
+
+
+/* RESPONSIVE SIDE */
+
+@media (max-width: 768px){
+    .toggle-button{
+        display: flex;
+    }
+    
+    .navlinks{
+        display: none;
+        width: 100%;
+    }
+
+    .navbar{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navlinks ul{
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .navlinks li{
+        text-align: center;
+    }
+
+    .navlinks li a{
+        
+    }
+
+    .navlinks.active{
+        display: block;
+    }
+
+    /* body and main */
+
+    .hello{
+        padding: 0%;
+        margin-top: 1.5rem;
+        text-align: center;
+    }
+
+    .content h1{
+        display: block;
+        justify-content: center;
+        text-align: center;
+        padding-top: 1rem;
+        color: beige;
+        font-size: 2em;
+    }
+
+
+    p{
+        padding: 1em;
+        text-align: center;
+        font-size: 20px;
+    }
+
+    .brief{
+        font-size: 3rem;
+    }
+
+    .work{
+        display: grid;
+        gap: 1em;
+        justify-content: center;
+    }
+
+    .gallery{
+        display: flex;
+        justify-content: center;
+    }
+    
+    .card{
+        height: 20rem;
+        width: 20rem;
+        border-radius: 3px;
+        
+    }
+
+    .skill-name{
+        color: beige;
+        font-size: 13px;
+        font-weight: 600;
+        margin: 10px;
+    }
+
+    input[type='email']{
+        padding: 0.5em;
+        width: 100%;
+    }
+    
+    input[type='password']{
+        padding: 0.5em;
+        width: 100%;
+    }
+
+    .measht{
+        height: 19em;
+        width:  19em;
+    }
+
+    .sign-up{
+        margin: 1.7em;
+    }
+
+    /* footer things */
+
+    .socials ul li{
+        padding: 0;
+
+    }
+
+    .mgs{
+        height: 4em;
+        float: right;
+        padding: 0;
+        margin: 0;
+    }
+
+    .badge{
+        height: 20em;
+        /* margin-right: 1em; */
+    }
+
+}
+
+@keyframes slide {
+    from{
+        opacity: 0;
+        transform: translateY(0px);
+    }
+
+    to{
+        width: 100%;
+    }
+}
+
+
